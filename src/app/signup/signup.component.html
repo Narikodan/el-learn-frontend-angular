@@ -1,0 +1,75 @@
+<!-- <div class="card mx-auto mt-5 text-center" style="max-width: 400px;">
+    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+      <h3 class="card-title">USER REGISTRATION</h3>
+  
+      <form #form1="ngForm" (ngSubmit)="saveRegistration(form1.value)" class="w-100">
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter Name"
+            ngModel
+            #name="ngModel"
+            required
+            class="form-control"
+          >
+          <span
+            class="text-danger"
+            *ngIf="name.touched && name.invalid"
+          >
+            Enter name
+          </span>
+        </div>
+    
+        <div class="form-group mb-3">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            ngModel
+            #email="ngModel"
+            required
+            class="form-control"
+          >
+          <span
+            class="text-danger"
+            *ngIf="email.touched && email.invalid"
+          >
+            Enter E-mail
+          </span>
+        </div>
+    
+        <div class="form-group mb-3">
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            ngModel
+            #password="ngModel"
+            required
+            class="form-control"
+          >
+          <span
+            class="text-danger"
+            *ngIf="password.touched && password.invalid"
+          >
+            Enter password
+          </span>
+        </div>
+    
+        <button class="btn btn-primary btn-block" type="submit">Register</button>
+      </form>
+    </div>
+  </div> -->
+
+
+  <form #form="ngForm" (ngSubmit)="saveRegistration(form.value)">
+    <input type="text" placeholder="First Name" ngModel name="first_name" #first_name="ngModel"> <br>
+    <input type="text" placeholder="Last Name" ngModel name="last_name" #last_name="ngModel"> <br>
+    <input type="text" placeholder="Email ID" ngModel name="email" #email="ngModel"> <br>
+    <input type="text" placeholder="Password" ngModel name="password" #password="ngModel"> <br>
+    <input type="text" placeholder="Confirm Password" ngModel name="confirm_password" #confirm_password="ngModel"> <br>
+
+    <button class="btn btn-primary btn-block" type="submit">Register</button>
+
+  </form>
