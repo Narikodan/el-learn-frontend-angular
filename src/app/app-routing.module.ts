@@ -7,14 +7,19 @@ import { AuthGuard } from './auth.guard';
 import { CoursecategoryComponent } from './coursecategory/coursecategory.component';
 import { CoursesComponent } from './courses/courses.component';
 import { loggedOutGuard } from './logged-out.guard';
+import { CourseDetailsComponent } from './course-details/course-details.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 const routes: Routes = [
+  {path: '', component: LandingPageComponent, canActivate: [loggedOutGuard]  },
   {path:'signup', component:SignupComponent, canActivate: [loggedOutGuard]},
   {path:'login', component:LoginComponent, canActivate: [loggedOutGuard]},
   {path:'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
   {path:'coursecategory', component:CoursecategoryComponent},
-  { path: 'courses/:category', component: CoursesComponent },
+  {path:'courses/:category', component: CoursesComponent },
+  {path: 'course-details', component: CourseDetailsComponent  },
+
 ];
 
 @NgModule({

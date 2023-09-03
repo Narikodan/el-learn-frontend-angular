@@ -1,0 +1,26 @@
+<div class="page-container">
+  <app-navbar></app-navbar>
+
+  <div *ngIf="courseData" class="course-container">
+    <h1 class="course-title">{{ courseData.title }}</h1>
+    <p class="course-teacher">By {{ courseData.teacher.full_name }}</p>
+    <p class="course-description">{{ courseData.description }}</p>
+
+    <h2 class="section-title">Course Sections</h2>
+    <ul class="section-list">
+      <li *ngFor="let section of courseData.sections" class="section-item">
+        <h3 class="section-heading">{{ section.title }}</h3>
+        <ul class="video-list">
+          <li *ngFor="let video of section.videos" class="video-item">
+            <div class="video-controls">
+              <button class="play-button" (click)="toggleVideoPlayer(video)">
+                {{ video.showPlayer ? 'Close' : 'Play' }}
+              </button>
+            </div>
+            <app-video-player *ngIf="video.showPlayer" [videoId]="extractVideoId(video.video_url)"></app-video-player>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

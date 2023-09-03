@@ -1,0 +1,11 @@
+/* styles.css or your component-specific CSS file */
+.mat-black-bg {
+    background-color: #333131; /* Black background color */
+    
+    align-items: center;
+  }
+  
+  .text-white {
+    color: #fff; /* White text color */
+  }
+  

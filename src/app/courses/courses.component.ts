@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class CoursesComponent {
 
   constructor(
     private route: ActivatedRoute, 
-    private apiService: ApiService
+    private apiService: ApiService,
+    private router: Router
     ) {}
 
     ngOnInit(): void {
@@ -30,6 +31,13 @@ export class CoursesComponent {
         this.courses = Object.values(data);
         console.log(this.courses)
       });
+    }
+
+    viewCourseDetails(course: any) {
+      
+      console.log(course)
+      this.apiService.getCourseDetails(course)
+      this.router.navigate(['/course-details']);
     }
 
 }

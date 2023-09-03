@@ -1,0 +1,65 @@
+/* Add your custom styles here */
+.alert {
+    background-color: #28a745; /* Success alert background color */
+    color: #fff; /* Success alert text color */
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .login-container {
+    max-width: 250%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Container background color */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Heading color */
+  }
+  
+  .custom-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .custom-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3; /* Hovered button background color */
+  }
+  
+  .create-account {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .custom-link {
+    color: #007bff; /* Link text color */
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline;
+  }
+  

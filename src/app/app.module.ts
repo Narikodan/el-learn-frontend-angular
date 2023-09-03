@@ -10,6 +10,13 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoursecategoryComponent } from './coursecategory/coursecategory.component';
 import { CoursesComponent } from './courses/courses.component';
+import { CourseDetailsComponent } from './course-details/course-details.component';
+import { SafePipe } from './safe.pipe';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { CardComponent } from './card/card.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +25,14 @@ import { CoursesComponent } from './courses/courses.component';
     LoginComponent,
     DashboardComponent,
     CoursecategoryComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseDetailsComponent,
+    SafePipe,
+    VideoPlayerComponent,
+    CardComponent,
+    NavbarComponent,
+    FooterComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,8 @@ import { catchError, switchMap } from 'rxjs/operators';
 export class ApiService {
   private apiBaseUrl = 'http://localhost:8000/';
 
+  courseDetails: any;
+
   constructor(private http: HttpClient) { }
 
   private getHeaders(): HttpHeaders {
@@ -98,5 +100,13 @@ export class ApiService {
     const params = new HttpParams().set('category', category);
 
     return this.http.get(`${this.apiBaseUrl}courses-by-category/`, { params });
+  }
+
+  getCourseDetails(params:any){
+    this.courseDetails = params
+  }
+
+  getCourseData(){
+    return this.courseDetails
   }
 }

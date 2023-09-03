@@ -1,0 +1,86 @@
+/* Add your custom styles here */
+.page-container {
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-container {
+    margin-top: 2rem;
+  }
+  
+  .course-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .course-teacher {
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+  .course-description {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .section-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .section-item {
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #fff;
+  }
+  
+  .section-heading {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .video-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .video-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
+  .video-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .play-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .play-button:hover {
+    background-color: #0056b3;
+  }
+  

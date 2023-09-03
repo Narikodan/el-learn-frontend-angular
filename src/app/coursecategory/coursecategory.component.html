@@ -1,9 +1,12 @@
+<app-navbar></app-navbar>
 
-
-<div class="container mt-4">
-    <h2>Course Categories</h2>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let course of courses" (click)="coursesUnderCategory(course.category)">{{ course.category }}</li>
-    </ul>
+<div class="explore-courses">
+  <div class="explore-courses-content">
+    <h2 class="explore-courses-title">Explore Course Categories</h2>
+    <div class="explore-courses-list">
+      <div *ngFor="let course of courses" class="explore-courses-item" (click)="coursesUnderCategory(course.category)">
+        <span>{{ course.category }}</span>
+      </div>
+    </div>
   </div>
-  
+</div>

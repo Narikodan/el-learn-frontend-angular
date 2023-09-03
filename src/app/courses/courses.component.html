@@ -1,10 +1,12 @@
+<app-navbar></app-navbar>
 
-<div class="card" *ngFor="let course of courses">
-    <div class="card-body">
-      <h5 class="card-title">{{ course.title }}</h5>
-      
-      <p class="card-text">{{ course.description }}</p>
+<div class="courses-container">
+  <div class="course-card" *ngFor="let course of courses" (click)="viewCourseDetails(course)">
+    <div class="course-content">
+      <h2 class="course-title">{{ course.title }}</h2>
+      <p class="course-teacher">- by {{ course.teacher.full_name }}</p>
+      <p class="course-description">{{ course.description }}</p>
       <!-- Add more details as needed -->
     </div>
   </div>
-  
+</div>

@@ -1,0 +1,40 @@
+/* Custom styles for the explore-courses component */
+
+.explore-courses {
+    background-color: #f8f9fa; /* Background color for the section */
+    padding: 50px 0;
+  }
+  
+  .explore-courses-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .explore-courses-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333; /* Title text color */
+  }
+  
+  .explore-courses-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .explore-courses-item {
+    background-color: #295263; /* Item background color */
+    color: #fff; /* Item text color */
+    font-size: 1.25rem;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+  }
+  
+  .explore-courses-item:hover {
+    background-color: #0056b3; /* Hover background color */
+  }
+  

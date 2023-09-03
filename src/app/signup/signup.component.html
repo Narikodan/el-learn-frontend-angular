@@ -1,75 +1,51 @@
-<!-- <div class="card mx-auto mt-5 text-center" style="max-width: 400px;">
-    <div class="card-body d-flex flex-column align-items-center justify-content-center">
-      <h3 class="card-title">USER REGISTRATION</h3>
-  
-      <form #form1="ngForm" (ngSubmit)="saveRegistration(form1.value)" class="w-100">
-        <div class="form-group mb-3">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Name"
-            ngModel
-            #name="ngModel"
-            required
-            class="form-control"
-          >
-          <span
-            class="text-danger"
-            *ngIf="name.touched && name.invalid"
-          >
-            Enter name
-          </span>
+<div class="registration-container">
+  <div class="registration-card">
+    <div class="registration-card-body">
+      <h3 class="registration-card-title">USER REGISTRATION</h3>
+
+      <form #form="ngForm" (ngSubmit)="saveRegistration(form.value)">
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="First Name" ngModel name="first_name" required>
+          <div class="error-message" *ngIf="form.controls['first_name'].touched && form.controls['first_name'].hasError('required')">
+            Please enter your first name.
+          </div>
         </div>
-    
-        <div class="form-group mb-3">
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter Email"
-            ngModel
-            #email="ngModel"
-            required
-            class="form-control"
-          >
-          <span
-            class="text-danger"
-            *ngIf="email.touched && email.invalid"
-          >
-            Enter E-mail
-          </span>
+
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="Last Name" ngModel name="last_name" required>
+          <div class="error-message" *ngIf="form.controls['last_name'].touched && form.controls['last_name'].hasError('required')">
+            Please enter your last name.
+          </div>
         </div>
-    
-        <div class="form-group mb-3">
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-            ngModel
-            #password="ngModel"
-            required
-            class="form-control"
-          >
-          <span
-            class="text-danger"
-            *ngIf="password.touched && password.invalid"
-          >
-            Enter password
-          </span>
+
+        <div class="form-group">
+          <input type="email" class="form-input" placeholder="Email ID" ngModel name="email" required>
+          <div class="error-message" *ngIf="form.controls['email'].touched && form.controls['email'].hasError('required')">
+            Please enter your email.
+          </div>
         </div>
-    
-        <button class="btn btn-primary btn-block" type="submit">Register</button>
+
+        <div class="form-group">
+          <input type="password" class="form-input" placeholder="Password" ngModel name="password" required>
+          <div class="error-message" *ngIf="form.controls['password'].touched && form.controls['password'].hasError('required')">
+            Please enter your password.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-input" placeholder="Confirm Password" ngModel name="confirm_password" required>
+          <div class="error-message" *ngIf="form.controls['confirm_password'].touched && form.controls['confirm_password'].hasError('required')">
+            Please confirm your password.
+          </div>
+        </div>
+
+        <button class="registration-btn" type="submit">Register</button>
       </form>
     </div>
-  </div> -->
+  </div>
+</div>
 
-
-  <form #form="ngForm" (ngSubmit)="saveRegistration(form.value)">
-    <input type="text" placeholder="First Name" ngModel name="first_name" #first_name="ngModel"> <br>
-    <input type="text" placeholder="Last Name" ngModel name="last_name" #last_name="ngModel"> <br>
-    <input type="text" placeholder="Email ID" ngModel name="email" #email="ngModel"> <br>
-    <input type="text" placeholder="Password" ngModel name="password" #password="ngModel"> <br>
-    <input type="text" placeholder="Confirm Password" ngModel name="confirm_password" #confirm_password="ngModel"> <br>
-
-    <button class="btn btn-primary btn-block" type="submit">Register</button>
-
-  </form>
+<div class="login-link-container">
+  <p class="login-link-text">Already have an account?</p>
+  <a class="login-link" routerLink="/login">Login</a>
+</div>

@@ -1,0 +1,71 @@
+/* Custom styles for the registration page */
+.registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* Background color */
+    
+  }
+  
+  .registration-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .registration-card-body {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .registration-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333; /* Heading color */
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .error-message {
+    color: #dc3545; /* Error message color */
+    font-size: 0.875rem;
+  }
+  
+  .registration-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Primary button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .registration-btn:hover {
+    background-color: #0056b3; /* Button hover background color */
+  }
+  
+  .login-link-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .login-link-text {
+    color: #333;
+  }
+  
+  .login-link {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  

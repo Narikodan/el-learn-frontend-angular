@@ -1,24 +1,29 @@
-<div *ngIf="userData">
-    <h2>Welcome, {{ userData.first_name }} {{ userData.last_name }}!</h2>
-    <!-- Other dashboard content -->
-  </div>
+<app-navbar></app-navbar>
 
-<div class="container mt-5">
-    <div class="row">
-      <div class="col-md-4">
-        <!-- Sidebar with navigation options -->
-        <div class="list-group">
-          <a routerLink="/coursecategory" class="list-group-item list-group-item-action">Browse Courses by Category</a>
-          <a href="#" class="list-group-item list-group-item-action">Search Courses</a>
-          <a href="#" class="list-group-item list-group-item-action">Enrolled Courses</a>
-          <!-- Add more options as needed -->
-        </div>
-      </div>
-      <div class="col-md-8">
-        <!-- Content area to display course lists, search results, or enrolled courses -->
-        <router-outlet></router-outlet>
-      </div>
+<div class="dashboard-container">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Dashboard Menu</h2>
     </div>
+    <ul class="sidebar-menu">
+      <li>
+        <a routerLink="/coursecategory">Browse Courses by Category</a>
+      </li>
+      <li>
+        <a href="#">Search Courses</a>
+      </li>
+      <li>
+        <a href="#">Enrolled Courses</a>
+      </li>
+      <!-- Add more options as needed -->
+    </ul>
   </div>
-  
-<button class="btn btn-danger" (click)="signout()">Sign Out</button>
+  <div class="content">
+    <!-- Content area to display course lists, search results, or enrolled courses -->
+    <div *ngIf="userData" class="welcome-message">
+      <p>Welcome, {{ userData.first_name }} {{ userData.last_name }}!</p>
+      <!-- Other dashboard content -->
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
