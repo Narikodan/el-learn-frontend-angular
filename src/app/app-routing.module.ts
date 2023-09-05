@@ -9,6 +9,8 @@ import { CoursesComponent } from './courses/courses.component';
 import { loggedOutGuard } from './logged-out.guard';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { CreateCourseComponent } from './create-course/create-course.component';
+import { SectionAddComponent } from './section-add/section-add.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path:'coursecategory', component:CoursecategoryComponent},
   {path:'courses/:category', component: CoursesComponent },
   {path: 'course-details', component: CourseDetailsComponent  },
+  {path: 'create-course', component: CreateCourseComponent  },
+  {path: 'add-section', component: SectionAddComponent  },
 
 ];
 

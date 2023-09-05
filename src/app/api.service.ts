@@ -109,4 +109,23 @@ export class ApiService {
   getCourseData(){
     return this.courseDetails
   }
+
+  createCourse(courseData: any) {
+    const headers = this.getHeaders();
+    return this.http.post(`${this.apiBaseUrl}create-course/`, courseData, { headers });
+  }
+  
+  getUserCourses() {
+    const headers = this.getHeaders();
+    return this.http.get(`${this.apiBaseUrl}user-courses/`, { headers });
+  }
+  
+
+  createSection(sectionData: any) {
+    const headers = this.getHeaders();
+    return this.http.post(`${this.apiBaseUrl}create-section/`, sectionData, { headers });
+  }
+
+
+  
 }

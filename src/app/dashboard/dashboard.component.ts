@@ -19,6 +19,7 @@ export class DashboardComponent {
       this.userdataService.getUserData().subscribe(
         (data) => {
           this.userData = data;
+          console.log(this.userData)
         },
         (error) => {
           console.error('Error fetching user data:', error);
