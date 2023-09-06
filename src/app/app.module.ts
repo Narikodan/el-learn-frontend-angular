@@ -20,6 +20,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { SectionAddComponent } from './section-add/section-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddVideoComponent } from './add-video/add-video.component';
+
 
 
 
@@ -40,6 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LandingPageComponent,
     CreateCourseComponent,
     SectionAddComponent,
+    AddVideoComponent,
+    
     
   ],
   imports: [

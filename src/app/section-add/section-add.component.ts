@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,11 @@ export class SectionAddComponent implements OnInit {
   sectionForm: FormGroup = new FormGroup({}); // Initialize sectionForm
   courses: any[] = []; // Initialize courses
 
-  constructor(private formBuilder: FormBuilder, private apiService: ApiService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.sectionForm = this.formBuilder.group({
@@ -47,6 +52,7 @@ export class SectionAddComponent implements OnInit {
         (response: any) => { // Define the type of the response
           // Handle success
           console.log('Section created successfully:', response);
+          this.router.navigate(['/add-video']);
         },
         (error) => {
           // Handle error

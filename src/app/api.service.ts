@@ -126,6 +126,16 @@ export class ApiService {
     return this.http.post(`${this.apiBaseUrl}create-section/`, sectionData, { headers });
   }
 
+  getUserSections() {
+    const headers = this.getHeaders();
+    return this.http.get(`${this.apiBaseUrl}user-sections/`, { headers });
+  }
+
+  createVideo(VideoData: any) {
+    const headers = this.getHeaders();
+    return this.http.post(`${this.apiBaseUrl}create-video/`, VideoData, { headers });
+  }
+
 
   
 }
