@@ -1,0 +1,41 @@
+<section class="manage-courses">
+    <h1 class="page-title">Manage Courses</h1>
+  
+    <!-- Display a list of courses -->
+    <div *ngFor="let course of courses" class="course-card">
+      <div class="course-header" (click)="toggleSections(course)">
+        <h2 class="course-title clickable">{{ course.title }} </h2>
+        <div class="course-actions">
+          <button class="custom-btn primary-btn" (click)="editCourse(course); $event.stopPropagation()">Edit</button>
+          <button class="custom-btn danger-btn" (click)="deleteCourse(course); $event.stopPropagation()">Delete</button>
+        </div>
+      </div>
+  
+      <!-- Display sections and videos for the course when expanded -->
+      <ul *ngIf="course.expanded" class="section-list course-border">
+        <li *ngFor="let section of course.sections" class="section-item section-border" (click)="toggleVideos(section)">
+          <div class="section-header clickable">
+            <h3>{{ section.title }}</h3>
+            <div class="section-actions">
+              <button class="custom-btn primary-btn" (click)="editSection(section); $event.stopPropagation()">Edit</button>
+              <button class="custom-btn danger-btn" (click)="deleteSection(section); $event.stopPropagation()">Delete</button>
+            </div>
+          </div>
+  
+          <!-- Display videos for the section when expanded -->
+          <ul *ngIf="section.expanded" class="video-list">
+            <li *ngFor="let video of section.videos" class="video-item">
+              <div class="video-header clickable">
+                <h4>{{ video.title }}</h4>
+                <div class="video-actions">
+                  <button class="custom-btn primary-btn" (click)="editVideo(video); $event.stopPropagation()">Edit</button>
+                  <button class="custom-btn danger-btn" (click)="deleteVideo(video); $event.stopPropagation()">Delete</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+  

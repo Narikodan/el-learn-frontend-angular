@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoursecategoryComponent } from './coursecategory/coursecategory.component';
@@ -23,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddVideoComponent } from './add-video/add-video.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { UserCoursesComponent } from './user-courses/user-courses.component';
+import { ManageCoursesComponent } from './manage-courses/manage-courses.component';
+import { TokenInterceptor } from './token-interceptor.service';
 
 
 
@@ -47,6 +49,7 @@ import { UserCoursesComponent } from './user-courses/user-courses.component';
     AddVideoComponent,
     UserAccountComponent,
     UserCoursesComponent,
+    ManageCoursesComponent,
     
     
   ],
@@ -57,7 +60,11 @@ import { UserCoursesComponent } from './user-courses/user-courses.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

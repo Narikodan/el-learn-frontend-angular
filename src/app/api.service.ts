@@ -46,7 +46,7 @@ export class ApiService {
     return throwError(error);
   }
 
-  private refreshToken(): Observable<any> {
+  public refreshToken(): Observable<any> {
     const refreshToken = localStorage.getItem('refresh_token'); // Retrieve the saved refresh token
   
     // Check if refreshToken exists
@@ -69,17 +69,9 @@ export class ApiService {
 
   getUserData(): Observable<any> {
     const headers = this.getHeaders();
-    return this.http.get(`${this.apiBaseUrl}user-data/`, { headers }).pipe(
-      catchError(error => this.handle401Error(error, this.getUserData())),
-      switchMap(response => {
-        // Here, you can update your user authentication state or user object
-        // Example: authService.updateUser(response);
-  
-        // Return the response as is
-        return of(response);
-      })
-    );
+    return this.http.get(`${this.apiBaseUrl}user-data/`, { headers });
   }
+  
   
   submitRegistration(params: any){
     console.log(params)
