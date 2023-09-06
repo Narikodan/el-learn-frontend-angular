@@ -13,6 +13,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { SectionAddComponent } from './section-add/section-add.component';
 import { AddVideoComponent } from './add-video/add-video.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { UserCoursesComponent } from './user-courses/user-courses.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'create-course', component: CreateCourseComponent  },
   {path: 'add-section', component: SectionAddComponent  },
   {path: 'add-video', component: AddVideoComponent },
-  {path: 'account', component: UserAccountComponent }
+  {path: 'account', component: UserAccountComponent },
+  {path: 'user-courses', component: UserCoursesComponent }
 
 ];
 

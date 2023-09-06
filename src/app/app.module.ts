@@ -22,6 +22,7 @@ import { SectionAddComponent } from './section-add/section-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddVideoComponent } from './add-video/add-video.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { UserCoursesComponent } from './user-courses/user-courses.component';
 
 
 
@@ -45,6 +46,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
     SectionAddComponent,
     AddVideoComponent,
     UserAccountComponent,
+    UserCoursesComponent,
     
     
   ],

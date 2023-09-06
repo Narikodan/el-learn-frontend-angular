@@ -1,6 +1,6 @@
-<div id="youtube-player-container" class="video-player">
+<div #youtubePlayer id="youtube-player-container" class="video-player">
   <iframe
-    [src]="'https://www.youtube.com/embed/' + videoId | safe"
+    [src]="'https://www.youtube.com/embed/' + videoId + '?rel=0'"
     width="100%"
     height="0"
     frameborder="0"

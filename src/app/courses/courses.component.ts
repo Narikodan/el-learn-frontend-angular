@@ -35,7 +35,7 @@ export class CoursesComponent {
 
     viewCourseDetails(course: any) {
       
-      console.log(course)
+      console.log('this is passing',course)
       this.apiService.getCourseDetails(course)
       this.router.navigate(['/course-details']);
     }
