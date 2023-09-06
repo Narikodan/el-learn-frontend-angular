@@ -1,0 +1,63 @@
+/* Add your custom styles here */
+.my-account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #f5f5f5; /* Background color for the container */
+  }
+  
+  .my-account {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .my-account-header h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .my-account-options {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .my-account-option {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin: 0 10px;
+  }
+  
+  .my-account-option h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .my-account-option ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .my-account-option ul li {
+    margin-bottom: 10px;
+  }
+  
+  .my-account-option ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .my-account-option ul li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  

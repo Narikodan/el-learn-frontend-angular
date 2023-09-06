@@ -21,6 +21,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { SectionAddComponent } from './section-add/section-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddVideoComponent } from './add-video/add-video.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 
 
@@ -43,6 +44,7 @@ import { AddVideoComponent } from './add-video/add-video.component';
     CreateCourseComponent,
     SectionAddComponent,
     AddVideoComponent,
+    UserAccountComponent,
     
     
   ],
