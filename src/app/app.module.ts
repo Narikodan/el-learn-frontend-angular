@@ -31,6 +31,7 @@ import { UpdateSectionComponent } from './update-section/update-section.componen
 import { UpdateVideoComponent } from './update-video/update-video.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -59,6 +60,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     UpdateSectionComponent,
     UpdateVideoComponent,
     ConfirmationDialogComponent,
+    SearchComponent,
     
     
   ],

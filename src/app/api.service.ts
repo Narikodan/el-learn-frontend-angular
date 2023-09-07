@@ -161,5 +161,20 @@ export class ApiService {
 
   }
 
+  searchCourses(keyword: string): Observable<any[]> {
+    const headers = this.getHeaders();
+
+    // Define query parameters for the search request
+    const params = { keyword }; // Assuming your backend expects 'keyword' as the parameter name
+
+    return this.http.get<any[]>(`${this.apiBaseUrl}search/`, { headers, params })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error('Error while searching courses:', error);
+          return throwError(error);
+        })
+      );
+  }
+
   
 }
