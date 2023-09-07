@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Update Course</h2>
+    <form (ngSubmit)="updateVideo()" #courseForm="ngForm">
+      
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="videoData.title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Video URL</label>
+        <textarea class="form-control" id="video_url" name="video_url" [(ngModel)]="videoData.video_url" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Video</button>
+    </form>
+  </div>
+  

@@ -28,6 +28,7 @@ import { TokenInterceptor } from './token-interceptor.service';
 import { MatIconModule } from '@angular/material/icon';
 import { UpdateCourseComponent } from './update-course/update-course.component';
 import { UpdateSectionComponent } from './update-section/update-section.component';
+import { UpdateVideoComponent } from './update-video/update-video.component';
 
 
 
@@ -54,6 +55,7 @@ import { UpdateSectionComponent } from './update-section/update-section.componen
     ManageCoursesComponent,
     UpdateCourseComponent,
     UpdateSectionComponent,
+    UpdateVideoComponent,
     
     
   ],

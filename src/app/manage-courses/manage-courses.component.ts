@@ -54,6 +54,9 @@ export class ManageCoursesComponent implements OnInit {
 
   editVideo(video: any) {
     // Implement the edit video functionality here
+    console.log(video)
+    this.apiService.getCourseDetails(video)
+    this.router.navigate(['/update-video']);
   }
 
   deleteVideo(video: any) {
