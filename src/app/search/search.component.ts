@@ -62,6 +62,7 @@ export class SearchComponent {
   viewCourseDetails(course: any) {
     console.log('this is passing', course);
     this.apiService.getCourseDetails(course);
+    console.log(course)
     this.router.navigate(['/course-details']);
   }
 }

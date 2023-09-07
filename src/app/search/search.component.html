@@ -19,7 +19,7 @@
     <li *ngFor="let course of searchResults" class="result-item">
       <div class="result-info" (click)="viewCourseDetails(course)">
         <p class="course-title" >{{ course.title }}</p>
-        <p class="course-instructor">Instructor: {{ course.instructor }}</p>
+        <p class="course-instructor">By -  {{ course.teacher.full_name }}</p>
         <p class="course-description">{{ course.description }}</p>
       </div>
     </li>

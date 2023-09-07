@@ -1,30 +1,34 @@
 <app-navbar></app-navbar>
 
 <div class="dashboard-container">
-  <div class="sidebar">
-    <div class="sidebar-header">
-      <h2>Dashboard Menu</h2>
-    </div>
-    <ul class="sidebar-menu">
-      <li>
-        <a routerLink="/coursecategory">Browse Courses by Category</a>
-      </li>
-      <li>
-        <a routerLink="/search">Search Courses</a>
-      </li>
-      <li>
-        <a href="#">Enrolled Courses</a>
-      </li>
-      <!-- Add more options as needed -->
-    </ul>
-  </div>
   <div class="content">
     <!-- Content area to display course lists, search results, or enrolled courses -->
     <div *ngIf="userData" class="welcome-message">
-      <p>Welcome, {{ userData.first_name }} {{ userData.last_name }}!</p>
+      <p>Welcome, <span class="user-name">{{ userData.first_name }} {{ userData.last_name }}</span>!</p>
       <!-- Other dashboard content -->
       <button class="btn btn-primary" routerLink="/account">My Account</button>
     </div>
+    
+    <!-- Options -->
+    <div class="dashboard-options">
+      <a routerLink="/coursecategory" class="option">
+        <i class="fas fa-th-list"></i>
+        <span class="option-label">Browse Courses</span>
+      </a>
+      <a routerLink="/search" class="option">
+        <i class="fas fa-search"></i>
+        <span class="option-label">Search Courses</span>
+      </a>
+      <a href="#" class="option">
+        <i class="fas fa-book"></i>
+        <span class="option-label">Enrolled Courses</span>
+      </a>
+      <a routerLink="/createcourse" class="option create-course">
+        <i class="fas fa-plus"></i>
+        <span class="option-label">Create Course</span>
+      </a>
+    </div>
+    
     <router-outlet></router-outlet>
   </div>
 </div>
