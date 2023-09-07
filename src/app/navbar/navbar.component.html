@@ -1,19 +1,19 @@
-<div class="d-flex justify-content-center">
-    <div class="mx-auto">
-        <body class="news">
-            <header>
-              <div class="nav">
-                <ul>
-                  <li class="home"><a routerLink="/dashboard">Home</a></li>
-                  <li class="tutorials"><a  routerLink="/coursecategory">Tutorials</a></li>
-                  <li class="about"><a href="#">About</a></li>
-                  <li class="news"><a href="#">Newsletter</a></li>
-                  <li class="contact"><a (click)="signout()">signout</a></li>
-                </ul>
-              </div>
-            </header>
-          </body>
-    </div>
-  </div>
-  
-
+<div class="navbar">
+  <ul>
+    <li class="navbar-item">
+      <a routerLink="/dashboard">Home</a>
+    </li>
+    <li class="navbar-item">
+      <a routerLink="/coursecategory">Tutorials</a>
+    </li>
+    <li class="navbar-item">
+      <a href="#">About</a>
+    </li>
+    <li class="navbar-item">
+      <a href="#">Newsletter</a>
+    </li>
+    <li class="navbar-item">
+      <a (click)="signout()">Sign Out</a>
+    </li>
+  </ul>
+</div>

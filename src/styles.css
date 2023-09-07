@@ -1,2 +1,13 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+/* styles.css or styles.scss */
+body {
+    background-image: url('https://img.freepik.com/free-photo/solid-concrete-wall-textured-backdrop_53876-129493.jpg?w=740&t=st=1694105176~exp=1694105776~hmac=c1619e0cd3fcea666768ec9eafb13b10dbcb706d92c5a0c4b6e363844fdc64bf');
+    background-size: cover; /* Adjust to your preference */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background stays fixed while scrolling */
+    /* You can also set background color here if needed */
+    /* background-color: #f2f2f2; */
+    /* Adjust other styles as needed */
+  }
+  

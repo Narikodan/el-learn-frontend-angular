@@ -1,8 +1,8 @@
 /* Custom styles for the explore-courses component */
 
 .explore-courses {
-    background-color: #f8f9fa; /* Background color for the section */
-    padding: 50px 0;
+    /* background-color: #f8f9fa;  */
+    
   }
   
   .explore-courses-content {
@@ -14,7 +14,7 @@
   .explore-courses-title {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #333; /* Title text color */
+    color: #f0e8e8; /* Title text color */
   }
   
   .explore-courses-list {

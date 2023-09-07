@@ -1,29 +1,29 @@
 <app-navbar></app-navbar>
+
 <div class="my-account-container">
-    <div class="my-account">
-      <div class="my-account-header">
-        <h2>My Account</h2>
+  <div class="my-account">
+    <div class="my-account-header">
+      <h2>Welcome to Your Dashboard</h2>
+    </div>
+    <div class="my-account-options">
+      <div class="student-section">
+        <h3>As a Student</h3>
+        <ul>
+          <li><a href="#"><i class="bi bi-book"></i>Enrolled Courses</a></li>
+          <li><a href="#"><i class="bi bi-search"></i>Search Courses</a></li>
+          <li><a href="#"><i class="bi bi-bar-chart"></i>My Progress</a></li>
+        </ul>
       </div>
-      <div class="my-account-options">
-        <div class="my-account-option">
-          <h3>As a Teacher</h3>
-          <ul>
-            <li><a routerLink="/create-course">Create Course</a></li>
-            <li><a routerLink="/manage-courses">Manage Courses</a></li>
-            <li><a routerLink="/user-courses">My Courses</a></li>
-            <li><a href="#">My Students</a></li>
-            <li><a href="#">Messages</a></li>
-          </ul>
-        </div>
-        <div class="my-account-option">
-          <h3>As a Student</h3>
-          <ul>
-            <li><a href="#">Enrolled Courses</a></li>
-            <li><a href="#">Search Courses</a></li>
-            <li><a href="#">My Progress</a></li>
-          </ul>
-        </div>
+      <div class="teacher-section">
+        <h3>As a Teacher</h3>
+        <ul>
+          <li><a routerLink="/create-course"><i class="bi bi-journal-plus"></i>Create Course</a></li>
+          <li><a routerLink="/manage-courses"><i class="bi bi-gear"></i>Manage Courses</a></li>
+          <li><a routerLink="/user-courses"><i class="bi bi-book"></i>My Courses</a></li>
+          <li><a href="#"><i class="bi bi-people"></i>My Students</a></li>
+          <li><a href="#"><i class="bi bi-chat-dots"></i>Messages</a></li>
+        </ul>
       </div>
     </div>
   </div>
-  
+</div>

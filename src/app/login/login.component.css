@@ -10,17 +10,18 @@
     max-width: 250%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff; /* Container background color */
+    /* background-color: #fff; */
     border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(201, 193, 193, 0.1);
     text-align: center;
     border-radius: 5px;
+    color: #fff;
   }
   
   h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333; /* Heading color */
+    color: #faf7f7; /* Heading color */
   }
   
   .custom-input {

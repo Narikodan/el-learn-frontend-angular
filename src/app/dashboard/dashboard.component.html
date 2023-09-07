@@ -1,5 +1,4 @@
 <app-navbar></app-navbar>
-
 <div class="dashboard-container">
   <div class="content">
     <!-- Content area to display course lists, search results, or enrolled courses -->
@@ -12,23 +11,20 @@
     <!-- Options -->
     <div class="dashboard-options">
       <a routerLink="/coursecategory" class="option">
-        <i class="fas fa-th-list"></i>
+        <i class="bi bi-list"></i> <!-- Bootstrap Icon for list -->
         <span class="option-label">Browse Courses</span>
       </a>
       <a routerLink="/search" class="option">
-        <i class="fas fa-search"></i>
+        <i class="bi bi-search"></i> <!-- Bootstrap Icon for search -->
         <span class="option-label">Search Courses</span>
       </a>
       <a href="#" class="option">
-        <i class="fas fa-book"></i>
+        <i class="bi bi-book"></i> <!-- Bootstrap Icon for book -->
         <span class="option-label">Enrolled Courses</span>
       </a>
-      <a routerLink="/createcourse" class="option create-course">
-        <i class="fas fa-plus"></i>
+      <a routerLink="/create-course" class="option create-course">
+        <i class="bi bi-plus"></i> <!-- Bootstrap Icon for plus -->
         <span class="option-label">Create Course</span>
       </a>
-    </div>
-    
-    <router-outlet></router-outlet>
-  </div>
+   
 </div>

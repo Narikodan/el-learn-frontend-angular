@@ -1,19 +1,20 @@
 /* Add your custom styles here */
 .landing {
     padding: 100px 0;
-    background-color: #f8f9fa; /* Background color for the section */
+    /* background-color: #f8f9fa;  */
+    text-align: center;
   }
   
   h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #333; /* Heading color */
+    color: #b8b3b3; /* Heading color */
   }
   
   p {
     font-size: 1.25rem;
     margin-bottom: 30px;
-    color: #555; /* Text color */
+    color: #868484; /* Text color */
   }
   
   .cta-buttons {
@@ -39,6 +40,7 @@
   
   .img-fluid {
     max-width: 100%;
+    border-radius: 10%;
   }
   
   /* Add animations and other custom styles as needed */
