@@ -26,17 +26,17 @@ const routes: Routes = [
   {path:'login', component:LoginComponent, canActivate: [loggedOutGuard]},
   {path:'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
   {path:'coursecategory', component:CoursecategoryComponent},
-  {path:'courses/:category', component: CoursesComponent },
-  {path: 'course-details', component: CourseDetailsComponent  },
-  {path: 'create-course', component: CreateCourseComponent  },
-  {path: 'add-section', component: SectionAddComponent  },
-  {path: 'add-video', component: AddVideoComponent },
+  {path:'courses/:category', component: CoursesComponent, canActivate: [AuthGuard] },
+  {path: 'course-details', component: CourseDetailsComponent, canActivate: [AuthGuard]  },
+  {path: 'create-course', component: CreateCourseComponent, canActivate: [AuthGuard]  },
+  {path: 'add-section', component: SectionAddComponent, canActivate: [AuthGuard]  },
+  {path: 'add-video', component: AddVideoComponent, canActivate: [AuthGuard] },
   {path: 'account', component: UserAccountComponent },
   {path: 'user-courses', component: UserCoursesComponent },
-  {path: 'manage-courses', component: ManageCoursesComponent },
-  {path: 'update-course', component: UpdateCourseComponent },
-  {path: 'update-section', component: UpdateSectionComponent },
-  {path: 'update-video', component: UpdateVideoComponent }
+  {path: 'manage-courses', component: ManageCoursesComponent, canActivate: [AuthGuard] },
+  {path: 'update-course', component: UpdateCourseComponent, canActivate: [AuthGuard] },
+  {path: 'update-section', component: UpdateSectionComponent, canActivate: [AuthGuard] },
+  {path: 'update-video', component: UpdateVideoComponent, canActivate: [AuthGuard] }
 
 ];
 

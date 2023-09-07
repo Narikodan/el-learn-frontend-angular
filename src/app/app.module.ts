@@ -29,6 +29,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { UpdateCourseComponent } from './update-course/update-course.component';
 import { UpdateSectionComponent } from './update-section/update-section.component';
 import { UpdateVideoComponent } from './update-video/update-video.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -56,6 +58,7 @@ import { UpdateVideoComponent } from './update-video/update-video.component';
     UpdateCourseComponent,
     UpdateSectionComponent,
     UpdateVideoComponent,
+    ConfirmationDialogComponent,
     
     
   ],
@@ -66,6 +69,7 @@ import { UpdateVideoComponent } from './update-video/update-video.component';
     HttpClientModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatDialogModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

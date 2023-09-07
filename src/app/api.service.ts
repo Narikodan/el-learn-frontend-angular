@@ -143,5 +143,23 @@ export class ApiService {
     return this.http.put(`${this.apiBaseUrl}update-video/${courseId}/`, courseData, { headers });
   }
 
+  deleteCourse(courseId: number): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.delete(`${this.apiBaseUrl}courses/${courseId}/delete/`, { headers });
+
+  }
+
+  deleteSection(sectionId: number): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.delete(`${this.apiBaseUrl}sections/${sectionId}/delete/`, { headers });
+
+  }
+
+  deleteVideo(videoId: number): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.delete(`${this.apiBaseUrl}videos/${videoId}/delete/`, { headers });
+
+  }
+
   
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog'; // Import MatDialog
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component'; // Import the confirmation dialog component
 
 @Component({
   selector: 'app-manage-courses',
@@ -12,8 +14,9 @@ export class ManageCoursesComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private router: Router
-    ) {}
+    private router: Router,
+    private dialog: MatDialog // Inject MatDialog here
+  ) {}
 
   ngOnInit(): void {
     this.getCourses();
@@ -33,34 +36,88 @@ export class ManageCoursesComponent implements OnInit {
 
   editCourse(course: any) {
     // Implement the edit course functionality here
-    
-    this.apiService.getCourseDetails(course)
+    this.apiService.getCourseDetails(course);
     this.router.navigate(['/update-course']);
   }
 
   deleteCourse(course: any) {
-    // Implement the delete course functionality here
+    // Open the confirmation dialog before deleting the course
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // User clicked "Yes," proceed with course deletion
+        this.apiService.deleteCourse(course.id).subscribe(
+          (response) => {
+            console.log('Course deleted successfully', response);
+            // Redirect to the course details page or any other appropriate page
+            window.location.reload();
+          },
+          (error) => {
+            console.error('Error deleting course', error);
+            // Handle error (e.g., display an error message)
+          }
+        );
+      }
+    });
   }
 
   editSection(section: any) {
     // Implement the edit section functionality here
-    this.apiService.getCourseDetails(section)
+    this.apiService.getCourseDetails(section);
     this.router.navigate(['/update-section']);
   }
 
   deleteSection(section: any) {
-    // Implement the delete section functionality here
+    // Open the confirmation dialog before deleting the course
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // User clicked "Yes," proceed with course deletion
+        this.apiService.deleteSection(section.id).subscribe(
+          (response) => {
+            console.log('section deleted successfully', response);
+            // Redirect to the course details page or any other appropriate page
+            window.location.reload();
+          },
+          (error) => {
+            console.error('Error deleting section', error);
+            // Handle error (e.g., display an error message)
+          }
+        );
+      }
+    });
   }
+
 
   editVideo(video: any) {
     // Implement the edit video functionality here
-    console.log(video)
-    this.apiService.getCourseDetails(video)
+    console.log(video);
+    this.apiService.getCourseDetails(video);
     this.router.navigate(['/update-video']);
   }
 
   deleteVideo(video: any) {
-    // Implement the delete video functionality here
+    // Open the confirmation dialog before deleting the course
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // User clicked "Yes," proceed with course deletion
+        this.apiService.deleteVideo(video.id).subscribe(
+          (response) => {
+            console.log('video deleted successfully', response);
+            // Redirect to the course details page or any other appropriate page
+            window.location.reload();
+          },
+          (error) => {
+            console.error('Error deleting vidfeo', error);
+            // Handle error (e.g., display an error message)
+          }
+        );
+      }
+    });
   }
 
   toggleSections(course: any): void {
@@ -70,5 +127,4 @@ export class ManageCoursesComponent implements OnInit {
   toggleVideos(section: any): void {
     section.expanded = !section.expanded;
   }
-  
 }
