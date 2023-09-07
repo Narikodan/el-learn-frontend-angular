@@ -133,5 +133,10 @@ export class ApiService {
     return this.http.put(`${this.apiBaseUrl}update-course/${courseId}/`, courseData, { headers });
   }
 
+  updateSection(courseId: number, courseData: any): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.put(`${this.apiBaseUrl}update-section/${courseId}/`, courseData, { headers });
+  }
+
   
 }

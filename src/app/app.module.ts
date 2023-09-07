@@ -27,6 +27,7 @@ import { ManageCoursesComponent } from './manage-courses/manage-courses.componen
 import { TokenInterceptor } from './token-interceptor.service';
 import { MatIconModule } from '@angular/material/icon';
 import { UpdateCourseComponent } from './update-course/update-course.component';
+import { UpdateSectionComponent } from './update-section/update-section.component';
 
 
 
@@ -52,6 +53,7 @@ import { UpdateCourseComponent } from './update-course/update-course.component';
     UserCoursesComponent,
     ManageCoursesComponent,
     UpdateCourseComponent,
+    UpdateSectionComponent,
     
     
   ],

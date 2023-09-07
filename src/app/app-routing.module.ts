@@ -16,6 +16,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { UserCoursesComponent } from './user-courses/user-courses.component';
 import { ManageCoursesComponent } from './manage-courses/manage-courses.component';
 import { UpdateCourseComponent } from './update-course/update-course.component';
+import { UpdateSectionComponent } from './update-section/update-section.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: 'account', component: UserAccountComponent },
   {path: 'user-courses', component: UserCoursesComponent },
   {path: 'manage-courses', component: ManageCoursesComponent },
-  {path: 'update-course', component: UpdateCourseComponent }
+  {path: 'update-course', component: UpdateCourseComponent },
+  {path: 'update-section', component: UpdateSectionComponent }
 
 ];
 

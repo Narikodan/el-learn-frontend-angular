@@ -33,7 +33,7 @@ export class ManageCoursesComponent implements OnInit {
 
   editCourse(course: any) {
     // Implement the edit course functionality here
-    console.log(course.id)
+    
     this.apiService.getCourseDetails(course)
     this.router.navigate(['/update-course']);
   }
@@ -44,6 +44,8 @@ export class ManageCoursesComponent implements OnInit {
 
   editSection(section: any) {
     // Implement the edit section functionality here
+    this.apiService.getCourseDetails(section)
+    this.router.navigate(['/update-section']);
   }
 
   deleteSection(section: any) {
