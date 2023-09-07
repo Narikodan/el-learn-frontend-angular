@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-courses',
@@ -9,7 +10,10 @@ import { ApiService } from '../api.service';
 export class ManageCoursesComponent implements OnInit {
   courses: any[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+    ) {}
 
   ngOnInit(): void {
     this.getCourses();
@@ -29,6 +33,9 @@ export class ManageCoursesComponent implements OnInit {
 
   editCourse(course: any) {
     // Implement the edit course functionality here
+    console.log(course.id)
+    this.apiService.getCourseDetails(course)
+    this.router.navigate(['/update-course']);
   }
 
   deleteCourse(course: any) {
@@ -58,4 +65,5 @@ export class ManageCoursesComponent implements OnInit {
   toggleVideos(section: any): void {
     section.expanded = !section.expanded;
   }
+  
 }

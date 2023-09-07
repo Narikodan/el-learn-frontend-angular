@@ -25,7 +25,8 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import { UserCoursesComponent } from './user-courses/user-courses.component';
 import { ManageCoursesComponent } from './manage-courses/manage-courses.component';
 import { TokenInterceptor } from './token-interceptor.service';
-
+import { MatIconModule } from '@angular/material/icon';
+import { UpdateCourseComponent } from './update-course/update-course.component';
 
 
 
@@ -50,6 +51,7 @@ import { TokenInterceptor } from './token-interceptor.service';
     UserAccountComponent,
     UserCoursesComponent,
     ManageCoursesComponent,
+    UpdateCourseComponent,
     
     
   ],
@@ -58,7 +60,8 @@ import { TokenInterceptor } from './token-interceptor.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

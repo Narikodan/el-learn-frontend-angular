@@ -128,6 +128,10 @@ export class ApiService {
     return this.http.post(`${this.apiBaseUrl}create-video/`, VideoData, { headers });
   }
 
+  updateCourse(courseId: number, courseData: any): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.put(`${this.apiBaseUrl}update-course/${courseId}/`, courseData, { headers });
+  }
 
   
 }

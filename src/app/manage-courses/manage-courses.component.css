@@ -1,3 +1,6 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
 .manage-courses {
     background-color: #f0f0f0;
     padding: 20px;
@@ -27,7 +30,7 @@
   }
   
   .course-title {
-    font-size: 20px;
+    font-size: 30px;
     color: #333;
     margin: 0;
   }
@@ -72,6 +75,7 @@
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
+    
   }
   
   .section-header {
@@ -79,6 +83,7 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    font-size: 15px;
   }
   
   .section-actions {
@@ -105,5 +110,6 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    font-size: 12px;
   }
   
