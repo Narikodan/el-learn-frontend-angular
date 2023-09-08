@@ -32,6 +32,7 @@ import { UpdateVideoComponent } from './update-video/update-video.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SearchComponent } from './search/search.component';
+import { EnrolledCoursesComponent } from './enrolled-courses/enrolled-courses.component';
 
 
 
@@ -61,6 +62,7 @@ import { SearchComponent } from './search/search.component';
     UpdateVideoComponent,
     ConfirmationDialogComponent,
     SearchComponent,
+    EnrolledCoursesComponent,
     
     
   ],

@@ -1,0 +1,47 @@
+/* Custom CSS for the user courses section */
+
+.user-courses {
+    /* background-color: #f8f9fa;  */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ebe6e6; /* Section title color */
+  }
+  
+  .course-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .course-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .course-item:hover {
+    background-color: #f0f0f0; /* Hover background color */
+  }
+  
+  .course-title {
+    font-size: 1.25rem;
+    color: #333; /* Course title color */
+    margin: 0;
+  }
+  
+  .course-description {
+    font-size: 1rem;
+    color: #555; /* Course description color */
+    margin-top: 5px;
+  }
+  
+  /* You can further customize the styles as needed */
+  
