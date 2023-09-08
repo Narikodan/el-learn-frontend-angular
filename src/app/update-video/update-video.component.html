@@ -1,16 +1,17 @@
+<app-navbar></app-navbar>
 <div class="container">
-    <h2>Update Course</h2>
-    <form (ngSubmit)="updateVideo()" #courseForm="ngForm">
-      
+  <div class="update-course">
+    <h2>Update Video</h2>
+    <form (ngSubmit)="updateVideo()" #courseForm="ngForm" class="course-form">
       <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="videoData.title" required>
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-input" id="title" name="title" [(ngModel)]="videoData.title" required>
       </div>
       <div class="form-group">
-        <label for="description">Video URL</label>
-        <textarea class="form-control" id="video_url" name="video_url" [(ngModel)]="videoData.video_url" required></textarea>
+        <label for="video_url" class="form-label">Video URL</label>
+        <textarea class="form-input" id="video_url" name="video_url" [(ngModel)]="videoData.video_url" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Update Video</button>
     </form>
   </div>
-  
+</div>

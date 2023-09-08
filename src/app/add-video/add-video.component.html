@@ -1,23 +1,24 @@
 <app-navbar></app-navbar>
 
 <div class="container">
+  <div class="add-video-container">
     <h2>Add Video</h2>
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" class="add-video-form">
       <div class="form-group">
-        <label for="title">Video Title:</label>
-        <input type="text" class="form-control" id="title" [(ngModel)]="video.title" name="title" required>
+        <label for="title">Video Title</label>
+        <input type="text" class="input-field" id="title" [(ngModel)]="video.title" name="title" required>
       </div>
       <div class="form-group">
-        <label for="videoUrl">Video URL:</label>
-        <input type="text" class="form-control" id="videoUrl" [(ngModel)]="video.video_url" name="video_url" required>
+        <label for="videoUrl">Video URL</label>
+        <input type="text" class="input-field" id="videoUrl" [(ngModel)]="video.video_url" name="video_url" required>
       </div>
       <div class="form-group">
-        <label for="section">Select Section:</label>
-        <select class="form-control" id="section" [(ngModel)]="video.section" name="section" required>
+        <label for="section">Select Section</label>
+        <select class="custom-select" id="section" [(ngModel)]="video.section" name="section" required>
           <option *ngFor="let section of sections" [value]="section.id">{{ section.title }}</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Add Video</button>
+      <button type="submit" class="btn-primary">Add Video</button>
     </form>
   </div>
-  
+</div>
