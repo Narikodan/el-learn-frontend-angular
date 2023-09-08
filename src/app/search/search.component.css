@@ -3,7 +3,7 @@
 .search-container {
     text-align: center;
     padding: 20px;
-    background-color: #007bff;
+    /* background-color: #007bff; */
   }
   
   .search-container form {
@@ -42,7 +42,7 @@
   
   h2 {
     font-size: 24px;
-    color: #333;
+    color: #f3efef;
   }
   
   ul {

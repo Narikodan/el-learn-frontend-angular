@@ -176,5 +176,16 @@ export class ApiService {
       );
   }
 
+  enrollUserInCourse(enrollmentData: any): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.post(`${this.apiBaseUrl}enroll-course/`, enrollmentData, { headers });
+  }
+
+  userEnrolledCourses(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get(`${this.apiBaseUrl}enrolled-courses/`, { headers });
+  }
+
+
   
 }

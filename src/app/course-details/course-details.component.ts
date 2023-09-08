@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -11,15 +11,18 @@ export class CourseDetailsComponent implements OnInit {
   courseData: any;
   videoUrls: string[] = []; // Initialize videoUrls as an array
   videoIds: (string | null)[] = []; // Initialize videoIds as an array
+  enrolledCourses: any; 
 
   constructor(
     private route: ActivatedRoute,
-    private courseDetailsService: ApiService
+    private courseDetailsService: ApiService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     // Use the service method here
     this.courseData = this.courseDetailsService.getCourseData();
+    this.loadUserEnrolledCourses();
     console.log('inside new component', this.courseData);
     console.log('inside new component', this.courseData.sections);
 
@@ -49,5 +52,44 @@ export class CourseDetailsComponent implements OnInit {
   }
   toggleVideoPlayer(video: any): void {
     video.showPlayer = !video.showPlayer; // Toggle showPlayer between true and false
+  }
+
+  enrollCourse(courseId: number): void {
+    // Enroll the user in the course by sending a POST request
+    const enrollmentData = { course_id: courseId };
+    this.courseDetailsService.enrollUserInCourse(enrollmentData).subscribe(
+      (response) => {
+        console.log(response);
+        if (response.message=='Enrollment successful') {
+          // Reload course details to update enrollment status if needed
+        this.courseDetailsService.getCourseDetails(this.courseData)
+        this.ngOnInit()
+        }
+        
+      },
+      (error) => {
+        console.error('Enrollment error:', error);
+      }
+    );
+  }
+
+  isEnrolled(course: any): boolean {
+    if (!course || !this.enrolledCourses) {
+      return false;
+    }
+    return this.enrolledCourses.some((enrolledCourse:any) => enrolledCourse.id === course.id);
+  }
+  loadUserEnrolledCourses(): void {
+    // Use your ApiService to load the user's enrolled courses and store them in this.enrolledCourses
+    this.courseDetailsService.userEnrolledCourses().subscribe(
+      (courses) => {
+        this.enrolledCourses = courses;
+        console.log('below are the user enrolled courses')
+        console.log(courses)
+      },
+      (error) => {
+        console.error("Error loading user's enrolled courses:", error);
+      }
+    );
   }
 }
