@@ -187,6 +187,39 @@ export class ApiService {
     return this.http.get(`${this.apiBaseUrl}enrolled-courses/`, { headers });
   }
 
+  sendResetToken(email: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    const body = { email };
+
+    return this.http.post(`${this.apiBaseUrl}password-reset-request/`, body, { headers })
+      .pipe(
+        catchError(error => {
+          console.error('Sending reset token failed:', error);
+          return throwError(error);
+        })
+      );
+  }
+
+  resetPassword(token: string, newPassword: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    const body = { token, new_password: newPassword }; // Adjust the field names as needed
+
+    return this.http.post(`${this.apiBaseUrl}password-reset/`, body, { headers })
+      .pipe(
+        catchError(error => {
+          console.error('Password reset failed:', error);
+          return throwError(error);
+        })
+      );
+  }
+}
+
 
   
-}
+

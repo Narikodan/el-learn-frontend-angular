@@ -15,6 +15,7 @@ export class NavbarComponent {
 
   signout(): void {
     // Clear tokens from local storage
+    console.log('clicked')
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
 

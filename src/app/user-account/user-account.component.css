@@ -1,4 +1,8 @@
 /* Add your own styles for the component */
+[fadeIn] {
+  opacity: 0;
+}
+
 .my-account-container {
   /* background-color: #f2f2f2; */
   display: flex;

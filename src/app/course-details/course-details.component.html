@@ -1,6 +1,5 @@
+<app-navbar></app-navbar>
 <div class="page-container">
-  <app-navbar></app-navbar>
-
   <div *ngIf="courseData" class="course-container">
     <button class="btn btn-success" (click)="enrollCourse(courseData.id)" *ngIf="!isEnrolled(courseData)">Enroll for this course</button>
     <h1 class="course-title">{{ courseData.title }}</h1>
@@ -14,16 +13,14 @@
         <ul class="video-list">
           <li *ngFor="let video of section.videos" class="video-item">
             <div class="video-controls">
+              <app-video-player *ngIf="video.showPlayer" [videoId]="extractVideoId(video.video_url)"></app-video-player>
               <button class="play-button" (click)="toggleVideoPlayer(video)">
                 {{ video.showPlayer ? 'Close' : 'Play' }}
               </button>
             </div>
-            <app-video-player *ngIf="video.showPlayer" [videoId]="extractVideoId(video.video_url)"></app-video-player>
           </li>
         </ul>
       </li>
     </ul>
   </div>
 </div>
-
-

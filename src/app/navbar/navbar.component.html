@@ -11,7 +11,7 @@
   <a routerLink="/inbox" [class.active]="isActive('/inbox')">
     <i class="bi bi-envelope"></i>
   </a>
-  <a routerLink="/logout" [class.active]="isActive('/logout')">
+  <a (click)="signout()" [class.active]="isActive('/logout')">
     <i class="bi bi-box-arrow-right"></i>
   </a>
   <div class="animation start-home"></div>

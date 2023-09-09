@@ -33,7 +33,9 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { MatDialogModule } from '@angular/material/dialog';
 import { SearchComponent } from './search/search.component';
 import { EnrolledCoursesComponent } from './enrolled-courses/enrolled-courses.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnimationsModule } from './animations/animations.module';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 @NgModule({
@@ -63,6 +65,7 @@ import { EnrolledCoursesComponent } from './enrolled-courses/enrolled-courses.co
     ConfirmationDialogComponent,
     SearchComponent,
     EnrolledCoursesComponent,
+    PasswordResetComponent,
     
     
   ],
@@ -74,6 +77,9 @@ import { EnrolledCoursesComponent } from './enrolled-courses/enrolled-courses.co
     ReactiveFormsModule,
     MatIconModule,
     MatDialogModule,
+    BrowserAnimationsModule,
+    AnimationsModule,
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
