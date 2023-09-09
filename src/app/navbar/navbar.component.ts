@@ -24,6 +24,10 @@ export class NavbarComponent {
     this.router.navigate(['']);
   }
 
-
-
+  isActive(route: string): boolean {
+    return this.router.url === route;
+  }
 }
+
+
+

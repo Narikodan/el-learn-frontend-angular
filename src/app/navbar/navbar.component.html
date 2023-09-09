@@ -1,19 +1,18 @@
-<div class="navbar">
-  <ul>
-    <li class="navbar-item">
-      <a routerLink="/dashboard">Home</a>
-    </li>
-    <li class="navbar-item">
-      <a routerLink="/coursecategory">Tutorials</a>
-    </li>
-    <li class="navbar-item">
-      <a href="#">About</a>
-    </li>
-    <li class="navbar-item">
-      <a href="#">Newsletter</a>
-    </li>
-    <li class="navbar-item">
-      <a (click)="signout()">Sign Out</a>
-    </li>
-  </ul>
-</div>
+<nav>
+  <a routerLink="/dashboard" [class.active]="isActive('/dashboard')">
+    <i class="bi bi-house"></i>
+  </a>
+  <a routerLink="/account" [class.active]="isActive('/account')">
+    <i class="bi bi-person"></i>
+  </a>
+  <a routerLink="/search" [class.active]="isActive('/search')">
+    <i class="bi bi-search"></i>
+  </a>
+  <a routerLink="/inbox" [class.active]="isActive('/inbox')">
+    <i class="bi bi-envelope"></i>
+  </a>
+  <a routerLink="/logout" [class.active]="isActive('/logout')">
+    <i class="bi bi-box-arrow-right"></i>
+  </a>
+  <div class="animation start-home"></div>
+</nav>

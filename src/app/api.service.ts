@@ -7,7 +7,8 @@ import { catchError, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiBaseUrl = 'http://localhost:8000/';
+  // private apiBaseUrl = 'https://vishnun.pythonanywhere.com/';
+  private apiBaseUrl = 'http://127.0.0.1:8000/';
 
   courseDetails: any;
 
@@ -75,16 +76,16 @@ export class ApiService {
   
   submitRegistration(params: any){
     console.log(params)
-    return this.http.post('http://localhost:8000/register/',params)
+    return this.http.post(`${this.apiBaseUrl}register/`,params)
   }
 
   submitLogin(params: any){
     console.log(params)
-    return this.http.post('http://localhost:8000/login/',params)
+    return this.http.post(`${this.apiBaseUrl}login/`,params)
   }
 
   courseCategory(){
-    return this.http.get('http://localhost:8000/course-categories/')
+    return this.http.get(`${this.apiBaseUrl}course-categories/`)
   }
 
   getCoursesUnderCategory(category: string): Observable<any> {
