@@ -22,11 +22,13 @@
     "@angular/router": "^16.1.0",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
+    "crypto-browserify": "^3.12.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
-    "ngx-youtube-player": "^12.0.2",
+    "razorpay": "^2.9.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "util": "^0.12.5",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

@@ -66,6 +66,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     SearchComponent,
     EnrolledCoursesComponent,
     PasswordResetComponent,
+  
     
     
   ],
