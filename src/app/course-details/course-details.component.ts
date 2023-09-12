@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { MessageService } from '../message.service';
+
 
 @Component({
   selector: 'app-course-details',
@@ -9,14 +11,17 @@ import { ApiService } from '../api.service';
 })
 export class CourseDetailsComponent implements OnInit {
   courseData: any;
+  message: { subject: string, content: string } = { subject: '', content: '' };
   videoUrls: string[] = []; // Initialize videoUrls as an array
   videoIds: (string | null)[] = []; // Initialize videoIds as an array
   enrolledCourses: any; 
+  messageSent:any
 
   constructor(
     private route: ActivatedRoute,
     private courseDetailsService: ApiService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService,
   ) {}
 
   ngOnInit(): void {
@@ -92,4 +97,39 @@ export class CourseDetailsComponent implements OnInit {
       }
     );
   }
+
+  sendMessage(): void {
+    // Check if the message subject and content are not empty
+    if (this.message.subject.trim() === '' || this.message.content.trim() === '') {
+      // Handle empty subject or content (e.g., show an error message)
+      return;
+    }
+
+    const messageData = {
+      subject: this.message.subject,
+      content: this.message.content,
+      teacherId: this.courseData.teacher.id, // Assuming you have teacher's ID
+      courseId: this.courseData.id // Assuming you have course ID
+    };
+    console.log(messageData)
+
+    // Call the message service to send the message
+    this.messageService.sendMessage(messageData).subscribe(
+      (response) => {
+        console.log(response);
+        if (response) {
+          // Clear the form fields after successful sending
+          this.message.subject = '';
+          this.message.content = '';
+          this.messageSent = "Message Sent!"
+          
+        }
+      },
+      (error) => {
+        console.error('Message sending error:', error);
+        // Handle message sending error (e.g., show an error message)
+      }
+    );
+  }
+
 }
