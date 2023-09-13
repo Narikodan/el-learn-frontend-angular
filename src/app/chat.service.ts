@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ChatService {
+  // private apiBaseUrl = 'https://vishnun.pythonanywhere.com/';
   private apiBaseUrl = 'http://127.0.0.1:8000/';
-
   constructor(private http: HttpClient) { }
 
   private getHeaders(): HttpHeaders {

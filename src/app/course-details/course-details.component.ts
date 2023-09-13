@@ -10,9 +10,13 @@ import { ChatService } from '../chat.service';
 })
 export class CourseDetailsComponent implements OnInit {
   courseData: any;
+  message: { subject: string, content: string } = { subject: '', content: '' };
   videoUrls: string[] = []; // Initialize videoUrls as an array
   videoIds: (string | null)[] = []; // Initialize videoIds as an array
   enrolledCourses: any; 
+  messageSent:any
+  userOwnedCourses:any
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +31,7 @@ export class CourseDetailsComponent implements OnInit {
     this.loadUserEnrolledCourses();
     console.log('inside new component', this.courseData);
     console.log('inside new component', this.courseData.sections);
+    this.getCourses();
 
     // Initialize videoUrls and videoIds arrays
     this.courseData.sections.forEach((section: any) => {
@@ -81,6 +86,7 @@ export class CourseDetailsComponent implements OnInit {
     }
     return this.enrolledCourses.some((enrolledCourse:any) => enrolledCourse.id === course.id);
   }
+  
   loadUserEnrolledCourses(): void {
     // Use your ApiService to load the user's enrolled courses and store them in this.enrolledCourses
     this.courseDetailsService.userEnrolledCourses().subscribe(
@@ -99,12 +105,40 @@ export class CourseDetailsComponent implements OnInit {
     this.chatService.createChatRoomWithTeacher(teacherId).subscribe(
       (chatRoom) => {
         // Redirect to the chat room with the newly created chat room ID
-        this.router.navigate(['/chat', chatRoom.id]);
+        console.log(chatRoom)
+        if (chatRoom.id){
+          this.router.navigate(['/chat', chatRoom.id]);
+        }
+        else {
+          this.router.navigate(['/chat']);
+        }
       },
       (error) => {
         console.error('Error creating chat room:', error);
       }
     );
   }
+
+  getCourses() {
+    // Fetch the list of courses from your API
+    this.courseDetailsService.getUserCourses().subscribe(
+      (data: any) => {
+        this.userOwnedCourses = data;
+        console.log('below is user owned courses')
+        console.log(this.userOwnedCourses)
+      },
+      (error) => {
+        console.error('Error fetching courses:', error);
+      }
+    );
+  }
+
+  isCourseOwnedByUser(course: any): boolean {
+    if (!course || !this.userOwnedCourses) {
+      return false;
+    }
+    return this.userOwnedCourses.some((userCourse: any) => userCourse.id === course.id);
+  }
+  
   
 }

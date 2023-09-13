@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="page-container">
   <div *ngIf="courseData" class="course-container">
-    <button class="btn btn-success" (click)="enrollCourse(courseData.id)" *ngIf="!isEnrolled(courseData)">Enroll for this course</button>
+    <button class="btn btn-success" (click)="enrollCourse(courseData.id)" *ngIf="!(isEnrolled(courseData) ||  isCourseOwnedByUser(courseData))">Enroll for this course</button>
     <h1 class="course-title">{{ courseData.title }}</h1>
     <p class="course-teacher">By {{ courseData.teacher.full_name }}</p>
     <p class="course-description">{{ courseData.description }}</p>
@@ -22,8 +22,8 @@
         </ul>
       </li>
     </ul>
-    <button class="btn btn-primary" (click)="initiateChatWithTeacher(courseData.teacher.id)">
-      Initiate Chat with Teacher
+    <button class="btn btn-primary" (click)="initiateChatWithTeacher(courseData.teacher.id)" *ngIf="isEnrolled(courseData)">
+      Chat with Teacher
     </button>
     
   </div>
