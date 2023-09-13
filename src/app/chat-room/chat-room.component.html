@@ -1,0 +1,26 @@
+<!-- chat-room.component.html -->
+
+<section class="chat-rooms">
+    <h2>Explore Chat Rooms</h2>
+    <ul class="room-list">
+      <li *ngFor="let chatRoom of chatRooms">
+        <a [routerLink]="['/chat', chatRoom.id]">
+          <div class="room-info">
+            <div class="room-title">
+              Chat with
+              <span *ngFor="let user of chatRoom.users; let lastUser = last">
+                {{ user.first_name }} {{ user.last_name }}
+                <!-- Display a comma if it's not the last user -->
+                <ng-container *ngIf="!lastUser">,</ng-container>
+              </span>
+            </div>
+            <div class="room-description">
+              Open chat room.
+            </div>
+          </div>
+         
+        </a>
+      </li>
+    </ul>
+  </section>
+  

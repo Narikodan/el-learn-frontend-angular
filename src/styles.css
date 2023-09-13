@@ -1,7 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 /* styles.css or styles.scss */
-[fadeIn] {
+[slideInRight] {
   opacity: 0;
 }
 

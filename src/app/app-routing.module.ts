@@ -21,6 +21,8 @@ import { UpdateVideoComponent } from './update-video/update-video.component';
 import { SearchComponent } from './search/search.component';
 import { EnrolledCoursesComponent } from './enrolled-courses/enrolled-courses.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
+import { MessageComponent } from './message/message.component';
 
 
 const routes: Routes = [
@@ -42,7 +44,9 @@ const routes: Routes = [
   {path: 'update-video', component: UpdateVideoComponent, canActivate: [AuthGuard] },
   {path: 'search', component: SearchComponent },
   {path: 'enrolled-courses', component: EnrolledCoursesComponent },
-  {path: 'reset-password', component: PasswordResetComponent }
+  {path: 'reset-password', component: PasswordResetComponent },
+  {path: 'chat', component: ChatRoomComponent },
+  { path: 'chat/:chatRoomId', component: MessageComponent },
 
 ];
 

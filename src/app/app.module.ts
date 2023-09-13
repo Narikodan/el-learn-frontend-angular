@@ -36,6 +36,9 @@ import { EnrolledCoursesComponent } from './enrolled-courses/enrolled-courses.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationsModule } from './animations/animations.module';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
+import { MessageComponent } from './message/message.component';
+import { TimeAgoPipe } from './time-ago.pipe';
 
 
 @NgModule({
@@ -66,6 +69,9 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     SearchComponent,
     EnrolledCoursesComponent,
     PasswordResetComponent,
+    ChatRoomComponent,
+    MessageComponent,
+    TimeAgoPipe,
   
     
     

@@ -1,0 +1,24 @@
+<div class="message-container">
+    <h2 class="page-title">Messages</h2>
+  
+    <!-- Display messages for the chat room using virtual scroll -->
+    <div class="message-list" #messageList (scroll)="onScroll()">
+        <div *ngFor="let message of visibleMessages" class="message-item">
+            <div [ngClass]="{'sender-message': message.sender.id === userData.id, 'receiver-message': message.sender.id !== userData.id}">
+              <span class="message-sender">{{ message.sender.first_name }} {{ message.sender.last_name }}:</span>
+              <span class="message-content">{{ message.content }}</span>
+              <span class="message-timestamp">{{ message.timestamp | timeAgo }}</span>
+            </div>
+          </div>
+          
+    </div>
+  
+    <!-- Text input box for sending messages -->
+    <div class="message-input">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type your message..." class="message-text-input">
+      <button (click)="sendMessage()" [disabled]="!newMessage" class="message-send-button">
+        Send
+      </button>
+    </div>
+  </div>
+  

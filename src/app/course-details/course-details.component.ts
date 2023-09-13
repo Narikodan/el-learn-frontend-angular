@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-course-details',
@@ -16,7 +17,8 @@ export class CourseDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private courseDetailsService: ApiService,
-    private router: Router
+    private router: Router,
+    private chatService: ChatService
   ) {}
 
   ngOnInit(): void {
@@ -92,4 +94,17 @@ export class CourseDetailsComponent implements OnInit {
       }
     );
   }
+  initiateChatWithTeacher(teacherId: number): void {
+    // Create a chat room with the teacher and the current user
+    this.chatService.createChatRoomWithTeacher(teacherId).subscribe(
+      (chatRoom) => {
+        // Redirect to the chat room with the newly created chat room ID
+        this.router.navigate(['/chat', chatRoom.id]);
+      },
+      (error) => {
+        console.error('Error creating chat room:', error);
+      }
+    );
+  }
+  
 }
