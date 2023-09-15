@@ -16,10 +16,11 @@ export class SignupComponent {
   
 
   saveRegistration(a:any) {
-    console.log(a.value)
+    // console.log(a.value)
+    a.email = a.email.toLowerCase();
     this.apiService.submitRegistration(a).subscribe(response => {
-      console.log('inside response')
-      console.log(response)
+      // console.log('inside response')
+      // console.log(response)
       const a: any = response
       if ( a.message == 'success'){
         

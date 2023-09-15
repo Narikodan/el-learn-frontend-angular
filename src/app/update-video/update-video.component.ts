@@ -35,13 +35,13 @@ export class UpdateVideoComponent implements OnInit {
     // Send a PUT request to update the course using the ApiService
     this.apiService.updateVideo(this.videoId, this.videoData).subscribe(
       (response) => {
-        console.log('video updated successfully', response);
+        // console.log('video updated successfully', response);
         // Redirect to the video details page or any other appropriate page
         alert("Updated successfully")
         this.router.navigate(['/manage-courses']);
       },
       (error) => {
-        console.error('Error updating video', error);
+        // console.error('Error updating video', error);
         alert('Error updating video')
         // Handle error (e.g., display an error message)
       }

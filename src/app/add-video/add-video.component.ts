@@ -25,7 +25,7 @@ export class AddVideoComponent implements OnInit {
   fetchSections() {
     this.apiService.getUserSections().subscribe((data: any) => {
       this.sections = data;
-      console.log(this.sections)
+      // console.log(this.sections)
     });
   }
 
@@ -33,12 +33,12 @@ export class AddVideoComponent implements OnInit {
     this.apiService.createVideo(this.video).subscribe(
       (response: any) => {
         // Handle success
-        console.log('Video added successfully:', response);
+        // console.log('Video added successfully:', response);
         // You can redirect the user or show a success message here
       },
       (error: any) => {
         // Handle error
-        console.error('Error adding video:', error);
+        // console.error('Error adding video:', error);
         // You can show an error message to the user here
       }
     );

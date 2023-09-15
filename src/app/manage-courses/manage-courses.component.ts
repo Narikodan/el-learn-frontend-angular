@@ -29,7 +29,7 @@ export class ManageCoursesComponent implements OnInit {
         this.courses = data;
       },
       (error) => {
-        console.error('Error fetching courses:', error);
+        // console.error('Error fetching courses:', error);
       }
     );
   }
@@ -49,12 +49,12 @@ export class ManageCoursesComponent implements OnInit {
         // User clicked "Yes," proceed with course deletion
         this.apiService.deleteCourse(course.id).subscribe(
           (response) => {
-            console.log('Course deleted successfully', response);
+            // console.log('Course deleted successfully', response);
             // Redirect to the course details page or any other appropriate page
             window.location.reload();
           },
           (error) => {
-            console.error('Error deleting course', error);
+            // console.error('Error deleting course', error);
             // Handle error (e.g., display an error message)
           }
         );
@@ -82,7 +82,7 @@ export class ManageCoursesComponent implements OnInit {
             window.location.reload();
           },
           (error) => {
-            console.error('Error deleting section', error);
+            // console.error('Error deleting section', error);
             // Handle error (e.g., display an error message)
           }
         );
@@ -93,7 +93,7 @@ export class ManageCoursesComponent implements OnInit {
 
   editVideo(video: any) {
     // Implement the edit video functionality here
-    console.log(video);
+    // console.log(video);
     this.apiService.getCourseDetails(video);
     this.router.navigate(['/update-video']);
   }
@@ -107,12 +107,12 @@ export class ManageCoursesComponent implements OnInit {
         // User clicked "Yes," proceed with course deletion
         this.apiService.deleteVideo(video.id).subscribe(
           (response) => {
-            console.log('video deleted successfully', response);
+            // console.log('video deleted successfully', response);
             // Redirect to the course details page or any other appropriate page
             window.location.reload();
           },
           (error) => {
-            console.error('Error deleting vidfeo', error);
+            // console.error('Error deleting vidfeo', error);
             // Handle error (e.g., display an error message)
           }
         );

@@ -29,8 +29,8 @@ export class CourseDetailsComponent implements OnInit {
     // Use the service method here
     this.courseData = this.courseDetailsService.getCourseData();
     this.loadUserEnrolledCourses();
-    console.log('inside new component', this.courseData);
-    console.log('inside new component', this.courseData.sections);
+    // console.log('inside new component', this.courseData);
+    // console.log('inside new component', this.courseData.sections);
     this.getCourses();
 
     // Initialize videoUrls and videoIds arrays
@@ -40,7 +40,7 @@ export class CourseDetailsComponent implements OnInit {
         this.videoUrls.push(videoUrl);
         const videoId = this.extractVideoId(videoUrl);
         this.videoIds.push(videoId);
-        console.log(videoId)
+        // console.log(videoId)
       });
     });
   }
@@ -66,7 +66,7 @@ export class CourseDetailsComponent implements OnInit {
     const enrollmentData = { course_id: courseId };
     this.courseDetailsService.enrollUserInCourse(enrollmentData).subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
         if (response.message=='Enrollment successful') {
           // Reload course details to update enrollment status if needed
         this.courseDetailsService.getCourseDetails(this.courseData)
@@ -75,7 +75,7 @@ export class CourseDetailsComponent implements OnInit {
         
       },
       (error) => {
-        console.error('Enrollment error:', error);
+        // console.error('Enrollment error:', error);
       }
     );
   }
@@ -92,11 +92,11 @@ export class CourseDetailsComponent implements OnInit {
     this.courseDetailsService.userEnrolledCourses().subscribe(
       (courses) => {
         this.enrolledCourses = courses;
-        console.log('below are the user enrolled courses')
-        console.log(courses)
+        // console.log('below are the user enrolled courses')
+        // console.log(courses)
       },
       (error) => {
-        console.error("Error loading user's enrolled courses:", error);
+        // console.error("Error loading user's enrolled courses:", error);
       }
     );
   }
@@ -114,7 +114,7 @@ export class CourseDetailsComponent implements OnInit {
         }
       },
       (error) => {
-        console.error('Error creating chat room:', error);
+        // console.error('Error creating chat room:', error);
       }
     );
   }
@@ -124,11 +124,11 @@ export class CourseDetailsComponent implements OnInit {
     this.courseDetailsService.getUserCourses().subscribe(
       (data: any) => {
         this.userOwnedCourses = data;
-        console.log('below is user owned courses')
-        console.log(this.userOwnedCourses)
+        // console.log('below is user owned courses')
+        // console.log(this.userOwnedCourses)
       },
       (error) => {
-        console.error('Error fetching courses:', error);
+        // console.error('Error fetching courses:', error);
       }
     );
   }

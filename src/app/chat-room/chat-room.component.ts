@@ -24,15 +24,15 @@ export class ChatRoomComponent implements OnInit {
   }
 
   fetchChatRooms(): void {
-    // Use the API service to get a list of chat rooms
+    // API service to get a list of chat rooms
     this.apiService.getChatRooms().subscribe((data: any) => {
       this.chatRooms = data;
-      console.log(data)
+      // console.log(data)
     });
   }
 
   createChatRoom(): void {
-    // Use the API service to create a new chat room
+    // API service to create a new chat room
     if (this.newChatRoomName) {
       this.apiService.createChatRoom({ name: this.newChatRoomName }).subscribe(() => {
         // After creating the chat room, refresh the list

@@ -23,9 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   Login(a:any){
+    a.email = a.email.toLowerCase()
     this.loginService.submitLogin(a).subscribe( response => {
-      console.log('inside Login response')
-      console.log(response)
+      // console.log('inside Login response')
+      // console.log(response)
       const a: any = response
       if ( a.message == 'success'){
         localStorage.setItem('access_token', a.access);

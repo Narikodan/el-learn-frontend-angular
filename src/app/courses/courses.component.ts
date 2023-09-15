@@ -29,13 +29,13 @@ export class CoursesComponent {
       // Use the 'category' to fetch courses from your ApiService
       this.apiService.getCoursesUnderCategory(this.category).subscribe((data) => {
         this.courses = Object.values(data);
-        console.log(this.courses)
+        // console.log(this.courses)
       });
     }
 
     viewCourseDetails(course: any) {
       
-      console.log('this is passing',course)
+      // console.log('this is passing',course)
       this.apiService.getCourseDetails(course)
       this.router.navigate(['/course-details']);
     }

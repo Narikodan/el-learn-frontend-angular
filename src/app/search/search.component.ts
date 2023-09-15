@@ -47,7 +47,7 @@ export class SearchComponent {
     if (this.searchKeyword) {
       const keyword = this.searchKeyword.toLowerCase();
       this.searchResults = this.originalResults.filter((course) => {
-        // You can customize this filtering logic based on your needs
+        //customize this filtering logic based on needs
         return (
           course.title.toLowerCase().includes(keyword) ||
           course.description.toLowerCase().includes(keyword)
@@ -60,9 +60,9 @@ export class SearchComponent {
   }
 
   viewCourseDetails(course: any) {
-    console.log('this is passing', course);
+    // console.log('this is passing', course);
     this.apiService.getCourseDetails(course);
-    console.log(course)
+    // console.log(course)
     this.router.navigate(['/course-details']);
   }
 }

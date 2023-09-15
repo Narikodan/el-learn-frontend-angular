@@ -22,12 +22,12 @@ export class CreateCourseComponent {
     
     this.apiService.createCourse(this.newCourse).subscribe(
       (response) => {
-        console.log('Course created successfully', response);
+        // console.log('Course created successfully', response);
         // Redirect to a success page or navigate elsewhere
         this.router.navigate(['/add-section']);
       },
       (error) => {
-        console.error('Error creating course', error);
+        // console.error('Error creating course', error);
         // Handle error, display an error message, etc.
       }
     );

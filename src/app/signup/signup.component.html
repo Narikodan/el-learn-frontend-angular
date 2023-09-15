@@ -19,11 +19,12 @@
         </div>
 
         <div class="form-group">
-          <input type="email" class="form-input" placeholder="Email ID" ngModel name="email" required>
-          <div class="error-message" *ngIf="form.controls['email'].touched && form.controls['email'].hasError('required')">
-            Please enter your email.
+          <input type="email" class="form-input" placeholder="Email ID" ngModel name="email" required emailLowerCase>
+          <div class="error-message" *ngIf="form.controls['email'].touched && (form.controls['email'].hasError('required') || form.controls['email'].hasError('email'))">
+            Please enter a valid email.
           </div>
         </div>
+        
 
         <div class="form-group">
           <input type="password" class="form-input" placeholder="Password" ngModel name="password" required>

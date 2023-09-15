@@ -75,12 +75,12 @@ export class ApiService {
   
   
   submitRegistration(params: any){
-    console.log(params)
+    // console.log(params)
     return this.http.post(`${this.apiBaseUrl}register/`,params)
   }
 
   submitLogin(params: any){
-    console.log(params)
+    // console.log(params)
     return this.http.post(`${this.apiBaseUrl}login/`,params)
   }
 
@@ -197,7 +197,7 @@ export class ApiService {
     return this.http.post(`${this.apiBaseUrl}password-reset-request/`, body, { headers })
       .pipe(
         catchError(error => {
-          console.error('Sending reset token failed:', error);
+          // console.error('Sending reset token failed:', error);
           return throwError(error);
         })
       );
@@ -213,7 +213,7 @@ export class ApiService {
     return this.http.post(`${this.apiBaseUrl}password-reset/`, body, { headers })
       .pipe(
         catchError(error => {
-          console.error('Password reset failed:', error);
+          // console.error('Password reset failed:', error);
           return throwError(error);
         })
       );

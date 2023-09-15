@@ -35,13 +35,13 @@ export class UpdateCourseComponent implements OnInit {
     // Send a PUT request to update the course using the ApiService
     this.apiService.updateCourse(this.courseId, this.courseData).subscribe(
       (response) => {
-        console.log('Course updated successfully', response);
+        // console.log('Course updated successfully', response);
         // Redirect to the course details page or any other appropriate page
         alert("Updated successfully")
         this.router.navigate(['/manage-courses']);
       },
       (error) => {
-        console.error('Error updating course', error);
+        // console.error('Error updating course', error);
         alert('Error updating course')
         // Handle error (e.g., display an error message)
       }

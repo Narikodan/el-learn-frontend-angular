@@ -35,13 +35,13 @@ export class UpdateSectionComponent implements OnInit {
     // Send a PUT request to update the section using the ApiService
     this.apiService.updateSection(this.sectionId, this.sectionData).subscribe(
       (response) => {
-        console.log('section updated successfully', response);
+        // console.log('section updated successfully', response);
         // Redirect to the section details page or any other appropriate page
         alert("Updated successfully")
         this.router.navigate(['/manage-courses']);
       },
       (error) => {
-        console.error('Error updating section', error);
+        // console.error('Error updating section', error);
         alert('Error updating section')
         // Handle error (e.g., display an error message)
       }

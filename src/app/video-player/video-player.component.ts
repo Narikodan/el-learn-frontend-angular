@@ -32,7 +32,7 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
     const iframe = this.elementRef.nativeElement.querySelector('iframe[data-prevent-youtube-navigation]');
     iframe.addEventListener('click', (event: { preventDefault: () => void; }) => {
       event.preventDefault();
-      // You can add a message or take other actions here if needed
+      //  other actions here if needed
     });
   }
 

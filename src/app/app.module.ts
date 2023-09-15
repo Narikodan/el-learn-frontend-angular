@@ -39,6 +39,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { MessageComponent } from './message/message.component';
 import { TimeAgoPipe } from './time-ago.pipe';
+import { EmailLowerCaseDirective } from './email-lower-case.directive';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { TimeAgoPipe } from './time-ago.pipe';
     ChatRoomComponent,
     MessageComponent,
     TimeAgoPipe,
+    EmailLowerCaseDirective,
   
     
     

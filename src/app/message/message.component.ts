@@ -31,10 +31,10 @@ export class MessageComponent implements OnInit {
     this.userdataService.getUserData().subscribe(
       (data) => {
         this.userData = data;
-        console.log(this.userData);
+        // console.log(this.userData);
       },
       (error) => {
-        console.error('Error fetching user data:', error);
+        // console.error('Error fetching user data:', error);
       }
     );
     this.route.params.subscribe((params) => {
@@ -50,7 +50,7 @@ export class MessageComponent implements OnInit {
   fetchChatRoomName(): void {
     // Use the API service to get the chat room name based on the chatRoomId
     this.apiService.getChatRoomName(this.chatRoomId).subscribe((data: any) => {
-      console.log(this.chatRoomId);
+      // console.log(this.chatRoomId);
       this.chatRoomName = data.name;
     });
   }

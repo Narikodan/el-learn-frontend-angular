@@ -34,7 +34,7 @@ export class SectionAddComponent implements OnInit {
         this.courses = courses;
       },
       (error) => {
-        console.error('Failed to load user courses:', error);
+        // console.error('Failed to load user courses:', error);
         this.courses = [];
       }
     );
@@ -51,12 +51,12 @@ export class SectionAddComponent implements OnInit {
       this.apiService.createSection(sectionData).subscribe(
         (response: any) => { // Define the type of the response
           // Handle success
-          console.log('Section created successfully:', response);
+          // console.log('Section created successfully:', response);
           this.router.navigate(['/add-video']);
         },
         (error) => {
           // Handle error
-          console.error('Failed to create section:', error);
+          // console.error('Failed to create section:', error);
         }
       );
     }
